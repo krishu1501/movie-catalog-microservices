@@ -1,0 +1,21 @@
+server:
+  port: 8999
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: DirectorService
+          uri: lb://director-service
+          predicates:
+            - Path=/director/**
+        - id: MovieService
+          uri: lb://movie-service
+          predicates:
+            - Path=/movie/**

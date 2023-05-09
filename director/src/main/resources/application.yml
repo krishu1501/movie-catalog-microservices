@@ -1,0 +1,10 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: director-service
+
+eureka:
+  instance:
+    hostname: localhost
